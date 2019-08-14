@@ -113,15 +113,15 @@ def detector(filename):
 	t = end-start
 	print('用时',t,'秒')
 
-	if not os.path.exists(im_save_path):
-		os.makedirs(im_save_path)
-	count_save_fig = os.listdir(im_save_path)
+	if not os.path.exists(sav_im_path):
+		os.makedirs(sav_im_path)
+	count_save_fig = os.listdir(sav_im_path)
 	if count_save_fig:
 		count_save_fig = [eval(i) for i in count_save_fig]
 		count_save_fig = max(count_save_fig)+1
 	else:
 		count_save_fig = 0
-	savefig_path = os.path.join(im_save_path,str(count_save_fig))
+	savefig_path = os.path.join(sav_im_path,str(count_save_fig))
 	if not os.path.exists(savefig_path):
 		os.makedirs(savefig_path)
 

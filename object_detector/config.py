@@ -14,4 +14,4 @@ neg_feat_ph = '../data/features/neg'
 model_path = '../data/models/'
 threshold = 0.3
 cdf_threshold = 0.9
-swrong = True
+swrong = False
