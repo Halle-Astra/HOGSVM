@@ -132,7 +132,7 @@ def detector(filename):
 	for (x,y,_,w,h) in detections:
 		ax.add_patch(patches.Rectangle((x,y),w,h,color = 'y',linewidth = 3,fill = False))
 	plt.title("Raw Detection before NMS")
-	plt.savefig(f'{savefig_path}/{filename}_Before_NMS_{threshold}_{cdf_threshold}_{step_raw}.jpg')
+	plt.savefig(f'{savefig_path}/{os.path.split(filename)[1].split(".")[0]}_Before_NMS_{threshold}_{cdf_threshold}_{step_raw}.jpg')
 	plt.show()
 	
 	rects = np.array([[x, y, x + w, y + h] for (x, y, _, w, h) in detections])
@@ -150,7 +150,7 @@ def detector(filename):
 	for f in pick:
 		ax.add_patch(patches.Rectangle((f[0],f[1]),f[2]-f[0],f[3]-f[1],color = 'y',linewidth = 3,fill = False))
 	plt.title("Final Detections after applying NMS")
-	plt.savefig(f'{savefig_path}/{filename}_After_NMS_{threshold}_{cdf_threshold}_{step_raw}.jpg')
+	plt.savefig(f'{savefig_path}/{os.path.split(filename)[1].split(".")[0]}_After_NMS_{threshold}_{cdf_threshold}_{step_raw}.jpg')
 	plt.show()
 
 	if swrong:
